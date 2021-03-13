@@ -43,7 +43,7 @@ const Main = () => {
   }
 
   return (
-    <div className='container mt-5 display-4 text-center'>
+    <div className='container mt-4 display-5 text-center'>
       <Steps current={current}>
         {steps.map((item) => (
           <Step key={item.title} title={item.title} />
@@ -51,9 +51,14 @@ const Main = () => {
       </Steps>
       <div className='steps-content'>
         {steps[current].content}
-        <Heading />
+        {current === 0 && <Heading />}
       </div>
-      <div className='steps-action'>
+      <div className='steps-action text-end'>
+        {current > 0 && (
+          <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
+            Previous
+          </Button>
+        )}
         {current < steps.length - 1 && (
           <Button type='primary' onClick={() => next()}>
             Next
@@ -62,11 +67,6 @@ const Main = () => {
         {current === steps.length - 1 && (
           <Button type='primary' onClick={() => message.success("Processing complete!")}>
             Done
-          </Button>
-        )}
-        {current > 0 && (
-          <Button style={{ margin: "0 8px" }} onClick={() => prev()}>
-            Previous
           </Button>
         )}
       </div>
