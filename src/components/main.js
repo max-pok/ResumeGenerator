@@ -1,8 +1,8 @@
 import React from "react"
 import { Steps, Button, message } from "antd"
-import { Form } from "antd"
 import "../styles/main.css"
 import Heading from "./heading"
+import WorkHistory from "./work-history"
 const { Step } = Steps
 
 const steps = [
@@ -71,6 +71,7 @@ const Main = () => {
       <div className='steps-content'>
         {steps[current].content}
         {current === 0 && <Heading {...heading} value={heading} onChangeValue={onHeaderChangeHandler} />}
+        {current === 1 && <WorkHistory />}
       </div>
       <div className='steps-action text-end'>
         {current > 0 && (
