@@ -1,7 +1,7 @@
 import React from "react"
 import "../styles/heading.css"
-import { Form, Input, Select, Button, Space } from "antd"
-import { MinusCircleOutlined, PlusCircleOutlined } from "@ant-design/icons"
+import { Form, Input, Select, Button } from "antd"
+import { MinusCircleOutlined } from "@ant-design/icons"
 
 const { Option } = Select
 
@@ -22,21 +22,17 @@ const formItemLayoutWithOutLabel = {
   },
 }
 
-const areas = [
-  { label: "Beijing", value: "Beijing" },
-  { label: "Shanghai", value: "Shanghai" },
-]
+const Heading = (props) => {
+  const { value, onChangeValue } = props
 
-const sights = {
-  Beijing: ["Tiananmen", "Great Wall"],
-  Shanghai: ["Oriental Pearl", "The Bund"],
-}
+  const { firstName, lastName, profession, city, prefix, state_province, zip_code, phone, email, social_links } = value
 
-const Heading = () => {
   const [form] = Form.useForm()
 
-  const onFinish = (values) => {
-    console.log("Received values of form: ", values)
+  const [header, setHeader] = React.useState({})
+
+  const onHeaderChange = (e) => {
+    onChangeValue(form.getFieldsValue())
   }
 
   const prefixSelector = (
@@ -45,18 +41,20 @@ const Heading = () => {
         style={{
           width: 100,
         }}
+        onChange={onHeaderChange}
       >
-        <Option value='972'>+972</Option>
+        <Option value='+972'>+972</Option>
       </Select>
     </Form.Item>
   )
 
   return (
     <div className='container mt-5 display-4 text-center input-form'>
-      <Form {...formItemLayout} form={form} name='register' onFinish={onFinish}>
+      <Form {...formItemLayout} form={form} name='register' onChange={onHeaderChange}>
         <Form.Item
-          name='firstName'
           label='First Name'
+          name='firstName'
+          initialValue={firstName}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -65,12 +63,13 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={firstName} />
         </Form.Item>
 
         <Form.Item
-          name='lastName'
           label='Last Name'
+          name='lastName'
+          initialValue={lastName}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -79,12 +78,13 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={lastName} />
         </Form.Item>
 
         <Form.Item
-          name='profession'
           label='Profession'
+          name='profession'
+          initialValue={profession}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -93,16 +93,17 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={profession} />
         </Form.Item>
 
-        <Form.Item name='city' label='City'>
-          <Input />
+        <Form.Item label='City' name='city' initialValue={city}>
+          <Input value={city} />
         </Form.Item>
 
         <Form.Item
-          name='state-province'
           label='State/Province'
+          name='state_province'
+          initialValue={state_province}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -111,11 +112,12 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={state_province} />
         </Form.Item>
         <Form.Item
-          name='zip-code'
           label='Zip Code'
+          name='zip_code'
+          initialValue={zip_code}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -124,12 +126,13 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={zip_code} />
         </Form.Item>
 
         <Form.Item
-          name='phone'
           label='Phone Number'
+          name='phone'
+          initialValue={phone}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -143,11 +146,13 @@ const Heading = () => {
             style={{
               width: "100%",
             }}
+            value={phone}
           />
         </Form.Item>
         <Form.Item
-          name='email'
           label='Email Address'
+          name='email'
+          initialValue={email}
           validateTrigger={["onChange", "onBlur"]}
           rules={[
             {
@@ -156,17 +161,19 @@ const Heading = () => {
             },
           ]}
         >
-          <Input />
+          <Input value={email} />
         </Form.Item>
 
-        <Form.List name='social-links' align='baseline'>
+        <Form.List initialValue={social_links} name='social_links' align='baseline'>
           {(fields, { add, remove }, { errors }) => (
             <>
               {fields.map((field, index) => (
                 <Form.Item {...(index === 0 ? formItemLayout : formItemLayoutWithOutLabel)} label={index === 0 ? "Social Links" : ""} required={true} key={field.key}>
                   <Form.Item
-                    {...field}
+                    {...fields}
+                    name={("link", index)}
                     validateTrigger={["onChange", "onBlur"]}
+                    initialValue={social_links[index]}
                     rules={[
                       {
                         required: true,
@@ -176,7 +183,7 @@ const Heading = () => {
                     ]}
                     noStyle
                   >
-                    <Input />
+                    <Input value={social_links[index]} />
                   </Form.Item>
                   <MinusCircleOutlined className='dynamic-delete-button' onClick={() => remove(field.name)} />
                 </Form.Item>
