@@ -5,24 +5,6 @@ import { DatePicker, TimePicker } from "antd"
 import { Radio, Cascader, InputNumber, TreeSelect, Switch } from "antd"
 import { MinusCircleOutlined } from "@ant-design/icons"
 
-const formItemLayout = {
-  labelCol: {
-    xs: { span: 24 },
-    sm: { span: 8 },
-  },
-  wrapperCol: {
-    xs: { span: 24 },
-    sm: { span: 20 },
-  },
-}
-
-const formItemLayoutWithOutLabel = {
-  wrapperCol: {
-    xs: { span: 24, offset: 0 },
-    sm: { span: 20, offset: 4 },
-  },
-}
-
 const rangeConfig = {
   rules: [
     {
@@ -42,7 +24,7 @@ const WorkHistory = () => {
     <div className='container mt-5 display-4 input-form-work'>
       <Form
         labelCol={{
-          span: 4,
+          span: 5,
         }}
         wrapperCol={{
           span: 20,
@@ -62,7 +44,7 @@ const WorkHistory = () => {
         </Form.Item>
 
         <Form.Item label='Date'>
-          <RangePicker style={{ width: "550px" }} />
+          <RangePicker style={{ width: "100%" }} />
         </Form.Item>
       </Form>
     </div>
