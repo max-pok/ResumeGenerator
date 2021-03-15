@@ -184,11 +184,17 @@ const Heading = (props) => {
                   >
                     <Input value={social_links[index]} />
                   </Form.Item>
-                  <MinusCircleOutlined className='dynamic-delete-button' onClick={() => remove(field.name)} />
+                  <MinusCircleOutlined
+                    className='dynamic-delete-button'
+                    onClick={async () => {
+                      await remove(index)
+                      onHeaderChange()
+                    }}
+                  />
                 </Form.Item>
               ))}
               <Form.Item {...formItemLayoutWithOutLabel}>
-                <Button type='dashed' onClick={() => add()} block>
+                <Button type='dashed' onClick={async () => await add()} block>
                   Add Social Links
                 </Button>
 

@@ -1,3 +1,1 @@
-export const INIT_SKILLS = {
-  skills: [{ skill: "", exp: 50 }],
-}
+export const INIT_SKILLS = [{ skill: "", experience: 50 }]

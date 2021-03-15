@@ -63,7 +63,7 @@ const Education = (props) => {
           <RangePicker style={{ width: "100%" }} picker='month' value={date} />
         </Form.Item>
 
-        <Form.Item name='gpa' label='GPA' initialValue={gpa}>
+        <Form.Item name='gpa' label='GPA (Optional)' initialValue={gpa}>
           <Input value={gpa} type='number' />
         </Form.Item>
       </Form>

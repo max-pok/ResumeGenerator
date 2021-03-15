@@ -59,7 +59,7 @@ const Main = () => {
   }
 
   const onSkillsChangeHandler = (value) => {
-    // setEducation(value)
+    setSkills(value)
   }
 
   const next = () => {
