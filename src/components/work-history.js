@@ -1,9 +1,7 @@
 import React from "react"
-import { Form, Input, Select, Button, Space } from "antd"
+import { Form, Input } from "antd"
 import "../styles/work-history.css"
-import { DatePicker, TimePicker } from "antd"
-import { Radio, Cascader, InputNumber, TreeSelect, Switch } from "antd"
-import { MinusCircleOutlined } from "@ant-design/icons"
+import { DatePicker } from "antd"
 
 const rangeConfig = {
   rules: [
@@ -15,36 +13,45 @@ const rangeConfig = {
   ],
 }
 
+const formItemLayout = {
+  labelCol: {
+    span: 5,
+  },
+  wrapperCol: {
+    span: 20,
+  },
+}
+
 const { RangePicker } = DatePicker
 
-const WorkHistory = () => {
+const WorkHistory = (props) => {
+  const { value, onChangeValue } = props
+
+  const { jobTitle, employer, location, date } = value
+
   const [form] = Form.useForm()
+
+  const onWorkerHistoryChange = () => {
+    onChangeValue(form.getFieldsValue())
+  }
 
   return (
     <div className='container mt-5 display-4 input-form-work'>
-      <Form
-        labelCol={{
-          span: 5,
-        }}
-        wrapperCol={{
-          span: 20,
-        }}
-        layout='horizontal'
-      >
-        <Form.Item label='Job Title'>
-          <Input />
+      <Form {...formItemLayout} form={form} name='work-history' layout='horizontal' onChange={onWorkerHistoryChange}>
+        <Form.Item name='jobTitle' label='Job Title' initialValue={jobTitle}>
+          <Input value={jobTitle} />
         </Form.Item>
 
-        <Form.Item label='Employer'>
-          <Input />
+        <Form.Item name='employer' label='Employer' initialValue={employer}>
+          <Input value={employer} />
         </Form.Item>
 
-        <Form.Item label='Location'>
-          <Input />
+        <Form.Item name='location' label='Location' initialValue={location}>
+          <Input value={location} />
         </Form.Item>
 
-        <Form.Item label='Date'>
-          <RangePicker style={{ width: "100%" }} />
+        <Form.Item name='date' label='Date' initialValue={date}>
+          <RangePicker style={{ width: "100%" }} picker='month' onChange={onWorkerHistoryChange} value={date} />
         </Form.Item>
       </Form>
     </div>

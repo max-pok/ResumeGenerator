@@ -30,14 +30,12 @@ const Heading = (props) => {
 
   const [form] = Form.useForm()
 
-  const [header, setHeader] = React.useState({})
-
   const onHeaderChange = (e) => {
     onChangeValue(form.getFieldsValue())
   }
 
   const prefixSelector = (
-    <Form.Item name='prefix' noStyle>
+    <Form.Item name='prefix' noStyle initialValue={prefix}>
       <Select
         style={{
           width: 100,
