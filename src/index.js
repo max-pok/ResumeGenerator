@@ -1,6 +1,6 @@
 import React from "react"
 import ReactDOM from "react-dom"
-import "antd/dist/antd.css"
+import "antd/dist/antd.dark.css"
 import Loader from "./components/loader"
 import Main from "./components/main"
 

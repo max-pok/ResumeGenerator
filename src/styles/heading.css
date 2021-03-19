@@ -2,3 +2,9 @@
   width: 800px;
   padding-right: 10%;
 }
+
+@media (max-width: 800px) {
+  .input-form {
+    width: 300px;
+  }
+}
