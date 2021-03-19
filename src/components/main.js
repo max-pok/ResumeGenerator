@@ -11,6 +11,7 @@ import { INIT_HEADER } from "../models/header.model"
 import { INIT_WORK_HISTORY } from "../models/work-hisotry.model"
 import { INIT_EDUCATION } from "../models/education.model"
 import { INIT_SKILLS } from "../models/skills.model"
+
 const { Step } = Steps
 
 const steps = [

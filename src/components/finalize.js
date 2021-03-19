@@ -1,8 +1,6 @@
 import "../styles/finalize.css"
-// import "antd/dist/antd.css"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { Card, Divider } from "antd"
-import { faPhone } from "@fortawesome/free-solid-svg-icons"
+import { Card } from "antd"
+import { PhoneOutlined, MailOutlined, HomeOutlined, LinkedinOutlined, UserOutlined } from "@ant-design/icons"
 
 const { Meta } = Card
 
@@ -17,40 +15,21 @@ const Finalize = () => {
                 <Meta title='Jonney Anderson' description='Web Designer' />
               </Card>
               <h4 className='ltitle'>Contact</h4>
-              <div className='contact-box pb0'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon={faPhone} />
-                </div>
+              <div className='contact-box pb1'>
+                {/* <div className='icon'> */}
+                <PhoneOutlined style={{ fontSize: "20px", color: "white" }} />
                 <div className='detail'>+122 2345 3763</div>
               </div>
-              <div className='contact-box pb0'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon='check-square' />
-                </div>
+              <div className='contact-box pb1'>
+                <MailOutlined style={{ fontSize: "20px", color: "white" }} />
                 <div className='detail'>info@gmail.com</div>
               </div>
-              <div className='contact-box pb0'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon='check-square' />
-                </div>
+              <div className='contact-box pb1'>
+                <LinkedinOutlined style={{ fontSize: "20px", color: "white" }} />
                 <div className='detail'>info@smarteyeapps.com</div>
               </div>
-              <div className='contact-box pb0'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon='check-square' />
-                </div>
-                <div className='detail'>info@smarteyeapps.com</div>
-              </div>
-              <div className='contact-box pb0'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon='check-square' />
-                </div>
-                <div className='detail'>info@smarteyeapps.com</div>
-              </div>
-              <div className='contact-box'>
-                <div className='icon'>
-                  <FontAwesomeIcon icon='check-square' />
-                </div>
+              <div className='contact-box pb1'>
+                <HomeOutlined style={{ fontSize: "20px", color: "white" }} />
                 <div className='detail'>First Floor,Vincent Plaza, Toranto, Canada</div>
               </div>
             </div>
@@ -58,12 +37,10 @@ const Finalize = () => {
           <div className='col-md-8 rt-div'>
             <div className='rit-cover'>
               <div className='hotkey'>
-                <h1 className=''>Jonney Anderson</h1>
-                <small>Web Designer</small>
+                <h1 className='header-title'>Jonney Anderson</h1>
+                <h4 className='header-title'>Web Designer</h4>
               </div>
-              <h2 className='rit-titl'>
-                <i className='far fa-user'></i>Profile
-              </h2>
+              <h2 className='rit-titl'>Profile</h2>
               <div className='about'>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan purus enim, a vestibulum est tristique sit amet. Suspendisse nibh nisl, imperdiet sit amet mi vitae, elementum elementum nibh. Vivamus vitae eros malesuada, convallis dolor malesuada, lobortis ex. Sed cursus augue risus, ac semper est consectetur vitae. Praesent consequat metus sit amet rhoncus luctus.</p>
               </div>
