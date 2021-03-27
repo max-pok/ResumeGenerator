@@ -130,13 +130,11 @@
 }
 .rit-cover .hotkey {
   text-align: right;
-  padding: 30px 20px;
 }
 .rit-cover .hotkey h1 {
   width: 100%;
   text-align: right;
   color: black;
-  font-family: "Courier New", Courier, monospace;
   font-weight: bold;
 }
 .rit-cover .hotkey small {
@@ -156,10 +154,10 @@
   margin-right: 5px;
 }
 .rit-cover .about {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-align: justify;
-  text-indent: 15px;
-  padding: 5px 0px;
+  /* text-indent: 15px; */
+  /* padding: 5px 0px; */
 }
 .rit-cover .about .btn-link li {
   float: left;
@@ -185,12 +183,11 @@
 .rit-cover .about .btn-link li a {
   color: #888;
 }
-.rit-cover .work-exp {
-  padding: 5px 0px;
-}
+
 .rit-cover .work-exp h6 {
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 0px;
+  color: #000;
 }
 .rit-cover .work-exp h6 span {
   float: right;
@@ -199,9 +196,7 @@
 .rit-cover .work-exp i {
   font-size: 0.9rem;
 }
-.rit-cover .work-exp ul {
-  padding: 5px 0px;
-}
+
 .rit-cover .work-exp ul li {
   font-size: 0.9rem;
   padding-left: 5px;
@@ -230,9 +225,6 @@
   text-align: left;
   padding: 8px 2px;
   font-size: 0.9rem;
-}
-.rit-cover .profess-cover .prog-row div {
-  padding: 0px;
 }
 .rit-cover .profess-cover .progress-bar {
   background-color: #00ab9f;

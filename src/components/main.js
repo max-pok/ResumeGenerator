@@ -87,12 +87,12 @@ const Main = () => {
       </Steps>
       <div className='steps-content'>
         {steps[current].content}
-        {/* {current === 0 && <Heading {...heading} value={heading} onChangeValue={onHeaderChangeHandler} />}
+        {current === 0 && <Heading {...heading} value={heading} onChangeValue={onHeaderChangeHandler} />}
         {current === 1 && <WorkHistory {...workHistory} value={workHistory} onChangeValue={onWorkHistoryChangeHandler} />}
         {current === 2 && <Education {...education} value={education} onChangeValue={onEducationChangeHandler} />}
         {current === 3 && <Skills {...skills} value={skills} onChangeValue={onSkillsChangeHandler} />}
-        {current === 4 && <Summery {...summary} value={summary} onChangeValue={onSummaryChangeHandler} />} */}
-        {current === 0 && <Finalize />}
+        {current === 4 && <Summery {...summary} value={summary} onChangeValue={onSummaryChangeHandler} />}
+        {current === 5 && <Finalize />}
       </div>
       <div className='steps-action text-end'>
         {current > 0 && (
